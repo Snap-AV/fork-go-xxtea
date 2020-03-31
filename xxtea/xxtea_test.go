@@ -12,7 +12,7 @@ func Test_XXTEA(t *testing.T) {
 	encrypt_data := Encrypt([]byte(str), []byte(key))
 	fmt.Println(base64.StdEncoding.EncodeToString(encrypt_data))
 
-	//Test format between 
+	//Test format between
 	url_str := EncryptStdToURLString(str, key)
 	fmt.Println(url_str)
 	std_str, _ := DecryptURLToStdString(url_str, key)
@@ -25,6 +25,7 @@ func Test_XXTEA(t *testing.T) {
 		t.Error("fail!")
 	}
 
-	if std_str != str {}
+	if std_str != str {
+	}
 
 }

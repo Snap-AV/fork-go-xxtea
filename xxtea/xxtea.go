@@ -121,7 +121,9 @@ func Encrypt(data []byte, key []byte) []byte {
 	if data == nil || len(data) == 0 {
 		return data
 	}
-	return toBytes(encrypt(toUint32s(data, true), toUint32s(key, false)), false)
+	// SNAP-AV MODIFIED
+	return toBytes(encrypt(toUint32s(data, false), toUint32s(key, false)), false)
+	//return toBytes(encrypt(toUint32s(data, true), toUint32s(key, false)), false)
 }
 
 // Decrypt the data with key.
@@ -131,7 +133,9 @@ func Decrypt(data []byte, key []byte) []byte {
 	if data == nil || len(data) == 0 {
 		return data
 	}
-	return toBytes(decrypt(toUint32s(data, false), toUint32s(key, false)), true)
+	//SNAP-AV MODIFIED
+	return toBytes(decrypt(toUint32s(data, false), toUint32s(key, false)), false)
+	//return toBytes(decrypt(toUint32s(data, false), toUint32s(key, false)), true)
 }
 
 // Encrypt the data with key.
